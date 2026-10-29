@@ -1,0 +1,13 @@
+# bbx validate ignore — operator-owned. Gitignore-style patterns for paths
+# that `bbx validate` should skip (broken-link and markdown checks). One
+# pattern per line, box-root-relative, '#' for comments.
+#
+# This is the boxholder's file. It exists so YOU (the human) can exclude
+# box-specific trees that carry illustrative or intentionally-unresolved links
+# — e.g. a vendored doc set or imported data. bbx already skips its own
+# generated docs (_content/docs/generated/) everywhere, so most boxes need nothing here.
+#
+# Examples (uncomment / adapt as needed):
+#
+#   vendor/**
+#   _content/imported/**/*.md

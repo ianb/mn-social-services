@@ -1,0 +1,9 @@
+---
+cron: 0 6 * * *
+not-before: 20h
+timeout: 30m
+description: "Daily question review: an agent decides or asks again each
+  question put away for 3 days or pending for 14"
+runs: bbx procedure run question-review
+reason: Daily early-morning sweep; precheck no-ops when no question needs review
+---

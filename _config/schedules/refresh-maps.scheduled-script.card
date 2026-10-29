@@ -1,0 +1,7 @@
+---
+cron: 0 5 * * *
+not-before: 20h
+description: Refresh MAP.md files when files or directories were added/deleted
+runs: bbx procedure run refresh-maps
+reason: Daily check; precheck no-ops when nothing changed
+---

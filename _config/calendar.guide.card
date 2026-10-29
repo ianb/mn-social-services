@@ -1,0 +1,38 @@
+---
+version: 1.0.0
+applies-to: Use when reviewing calendar event changes, or when
+  creating/editing/deleting calendar events
+default-action:
+  action: Ignore
+  text: Most calendar changes are informational and don't need action
+actions:
+  - name: Create Reminder
+    when: Event needs preparation (meeting prep, travel, etc.)
+    instructions: Create a doc card in _content/inbox/ with preparation notes
+  - name: Note Change
+    when: Significant change that user should know about (time/location change,
+      cancellation)
+    instructions: Create a doc card highlighting what changed and any needed adjustments
+  - name: Create Event
+    when: User asks to add a new event to their calendar
+    instructions: Write a new .ics file in _content/calendar/ with proper ICS format
+      including VTIMEZONE and TZID. Use X-BBX-CALENDAR-ID to target a specific
+      calendar. The event will be pushed to Google Calendar on next sync.
+  - name: Edit Event
+    when: User asks to change an existing calendar event (time, title, location,
+      etc.)
+    instructions: Find the .ics file in _content/calendar/ and edit the relevant
+      properties. Changes are pushed to Google Calendar on next sync.
+  - name: Delete Event
+    when: User asks to remove a calendar event
+    instructions: "Add an X-BBX-DELETE property (value: a short reason) to the .ics
+      file. The event will be deleted from Google Calendar on next sync."
+  - name: Ignore
+    when: Routine change that doesn't need attention
+    instructions: No action needed — just review and move on
+experiments:
+  - id: exp-initial
+    hypothesis: Most calendar changes need no action
+    approach: Default to ignoring, learn which events actually need preparation
+    active: true
+---

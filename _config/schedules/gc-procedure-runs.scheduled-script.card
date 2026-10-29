@@ -1,0 +1,8 @@
+---
+cron: 0 6 * * *
+not-before: 20h
+description: Delete expired procedure run directories (run dirs are a recent
+  cache — git history is the archive)
+runs: bbx procedure gc
+reason: Daily sweep; each run card carries its own expires stamp
+---

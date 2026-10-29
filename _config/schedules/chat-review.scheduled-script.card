@@ -1,0 +1,10 @@
+---
+cron: 0 4 * * *
+not-before: 20h
+enabled: false
+lock-group: retro
+description: "Nightly chat review: title and summarize chat sessions that have
+  grown enough to be worth re-reading"
+runs: bbx chat review run
+reason: Nightly sweep; opt in per box
+---

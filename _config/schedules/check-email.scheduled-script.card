@@ -1,0 +1,12 @@
+---
+cron: "*/15 * * * *"
+not-before: 10m
+on-wakeup: true
+enabled: false
+description: Pull new emails from Gmail for triage and response
+runs: bbx engine wakeup --connector gmail
+reason: Check email frequently during active hours
+requires:
+  connectors:
+    - gmail
+---

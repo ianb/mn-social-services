@@ -1,0 +1,39 @@
+---
+version: 1.0.0
+job-types:
+  - intake-job
+applies-to: Use when triaging new inbox items (notes, bookmarks, captures)
+triage-rules:
+  - text: Recipes and cooking content → Convert to Recipe
+    confidence: low
+    basis: default
+  - text: Reference material and documentation → Archive
+    confidence: low
+    basis: default
+default-action:
+  action: Ask User
+  text: When unsure about an item, ask the user what to do with it
+actions:
+  - name: Archive
+    when: Item is useful reference material
+    instructions: Move to _bookkeeping/archive/ with appropriate subdirectory
+  - name: Convert to Recipe
+    when: Item contains a recipe or cooking instructions
+    instructions: Create a recipe card in _content/recipes/ using bbx create, then
+      trash the original
+  - name: Keep for Reading
+    when: Item is worth reading later but not urgent
+    instructions: Move to a suitable location under _content/ (e.g.
+      _content/reading/) with bbx mv
+  - name: Trash
+    when: Item is not useful or relevant
+    instructions: Use bbx rm to soft-delete
+  - name: Ask User
+    when: Unsure about disposition or need clarification
+    instructions: Create a question card in _bookkeeping/questions/
+experiments:
+  - id: exp-initial
+    hypothesis: Initial triage rules need calibration through user feedback
+    approach: Triage conservatively, ask when unsure, learn from answers
+    active: true
+---

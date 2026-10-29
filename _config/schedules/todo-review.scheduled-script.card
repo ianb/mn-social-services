@@ -1,0 +1,9 @@
+---
+cron: 30 6 * * *
+not-before: 20h
+timeout: 30m
+description: "Daily todo review: an agent gives each overdue, newly started, or
+  stale todo a status change or a recheck date"
+runs: bbx procedure run todo-review
+reason: Daily early-morning sweep; precheck no-ops when no todo needs review
+---

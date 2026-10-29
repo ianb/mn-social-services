@@ -1,0 +1,9 @@
+---
+cron: 0 7 * * 1
+not-before: 3d
+lock-group: retro
+description: "Weekly retrospective: mine chat sessions for what the boxholder
+  taught the agent, integrate into personality/guide cards"
+runs: bbx procedure run process-retrospective
+reason: Weekly Monday-morning sweep over any chat sessions that went quiet
+---

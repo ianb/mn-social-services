@@ -1,0 +1,6 @@
+{
+  "extends": "beebox/tsconfig.base.json",
+  "include": [
+    "src"
+  ]
+}

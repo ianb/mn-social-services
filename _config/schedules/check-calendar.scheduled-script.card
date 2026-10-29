@@ -1,0 +1,12 @@
+---
+cron: 0 * * * *
+not-before: 30m
+on-wakeup: true
+enabled: false
+description: Sync Google Calendar events and detect changes
+runs: bbx engine wakeup --connector google-calendar
+reason: Sync calendar changes hourly
+requires:
+  connectors:
+    - google
+---
