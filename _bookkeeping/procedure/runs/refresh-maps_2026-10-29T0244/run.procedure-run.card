@@ -9,6 +9,15 @@ steps:
       status: skip
       stdout: "refresh-maps: no orphan maps"
   - id: refresh
-    status: running
+    status: failed
     started-at: 2026-10-29T02:44:57.371Z
+    completed-at: 2026-10-29T02:44:59.936Z
+    precheck:
+      status: pass
+    run:
+      stdout: |-
+        refresh-maps: finalized 0/4 map(s).
+          4 task(s) skipped — MAP.md not written: _bookkeeping, _config, _content, src
+      error: Claude Code is not logged in — run `claude auth login` on this machine, or grant the `claude-oauth-token` secret to this box
+      git-ref: 22cfc3b08d4ec904cfc5c8159a783a8370458cf2
 ---
