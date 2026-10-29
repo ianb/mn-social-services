@@ -1,0 +1,14 @@
+---
+procedure: _config/procedures/refresh-maps.procedure.card
+started-at: 2026-10-29T02:44:56.946Z
+steps:
+  - id: prune
+    status: skipped
+    started-at: 2026-10-29T02:44:56.951Z
+    precheck:
+      status: skip
+      stdout: "refresh-maps: no orphan maps"
+  - id: refresh
+    status: running
+    started-at: 2026-10-29T02:44:57.371Z
+---
