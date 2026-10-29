@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"/Users/ianbicking/src/beebox/beebox/bin/bbx\" validate --hook"
+            "command": "\"/opt/beebox/beebox/bin/bbx\" validate --hook"
           }
         ]
       }
